@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../../../../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;obj&#x2F;machinery&#x2F;atmospherics&#x2F;components&#x2F;unary&#x2F;hypertorus&#x2F;core - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var">Var Details</a></header>
+<main>
+<h1>core <aside>/<a href="obj.html">obj</a>/<a href="obj/machinery.html">machinery</a>/<a href="obj/machinery/atmospherics.html">atmospherics</a>/<a href="obj/machinery/atmospherics/components.html">components</a>/<a href="obj/machinery/atmospherics/components/unary/hypertorus.html">unary/hypertorus</a>/<a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html">core</a></aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L148">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 148"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/common_channel">common_channel</a></th><td>The common channel</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/conduction">conduction</a></th><td>Energy from the reaction lost from the molecule colliding between themselves.</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/core_temperature">core_temperature</a></th><td>Temperature of the center of the fusion reaction</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/corners">corners</a></th><td>Stores the information of the corners of the machine</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/critical_threshold_proximity">critical_threshold_proximity</a></th><td>Integrity of the machine, if reaches 900 the machine will explode</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/critical_threshold_proximity_archived">critical_threshold_proximity_archived</a></th><td>Store the integrity for calculations</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/current_damper">current_damper</a></th><td>User controlled variable to control the flow of the fusion by changing the instability of the reaction</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/delta_temperature">delta_temperature</a></th><td>Difference between the gases temperature and the internal temperature of the reaction</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/efficiency">efficiency</a></th><td>Efficiency of the reaction, it increases with the amount of plasma</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/emergency_alert">emergency_alert</a></th><td>The alert we send when we've reached emergency_point</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/emergency_point">emergency_point</a></th><td>The point at which we start sending messages to the common channel</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/energy">energy</a></th><td>Fusion vars
+E=mc^2 with some addition to allow it gameplaywise</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/engineering_channel">engineering_channel</a></th><td>The engineering channel</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/filter_type">filter_type</a></th><td>Set the filtering type of the waste remove</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/final_countdown">final_countdown</a></th><td>Var used in the meltdown phase</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/fuel_injection_rate">fuel_injection_rate</a></th><td>User controlled variable to control the flow of the fusion by changing the amount of fuel injected</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/fusion_temperature">fusion_temperature</a></th><td>These vars store the temperatures to be used in the GUI</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/has_reached_emergency">has_reached_emergency</a></th><td>Boolean used for logging if we've passed the emergency point</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/heat_limiter_modifier">heat_limiter_modifier</a></th><td>Hotter air is easier to heat up and cool down</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/heat_output">heat_output</a></th><td>The amount of heat that is finally emitted, based on the power output. Min and max are variables that depends of the modifier</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/heating_conductor">heating_conductor</a></th><td>User controlled variable to control the flow of the fusion by changing the contact of the material</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/icon_state_open">icon_state_open</a></th><td>Vars for the state of the icon of the object (open, off, active)</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/instability">instability</a></th><td>Instability effects how chaotic the behavior of the reaction is</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/internal_fusion">internal_fusion</a></th><td>Stores the information of the fusion gasmix</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/internal_power">internal_power</a></th><td>*Power emitted from the center of the fusion reaction: Internal power = densityH2 * densityTrit(Pi * (2 * rH2 * rTrit)**2) * Energy
+* density is calculated with moles/volume, rH2 and rTrit are values calculated with moles/(radius of the gas)
+both of the density can be varied by the power_modifier</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/iron_content">iron_content</a></th><td>Stores the iron content produced by the fusion</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/last_accent_sound">last_accent_sound</a></th><td>cooldown tracker for accent sounds</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/lastwarning">lastwarning</a></th><td>Time in 1/10th of seconds since the last sent warning</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/linked_input">linked_input</a></th><td>Stores the information of the fuel input</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/linked_interface">linked_interface</a></th><td>Hypertorus internal objects and gasmixes
+Stores the informations of the interface machine</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/linked_moderator">linked_moderator</a></th><td>Stores the information of the moderator input</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/linked_output">linked_output</a></th><td>Stores the information of the waste output</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/magnetic_constrictor">magnetic_constrictor</a></th><td>User controlled variable to control the flow of the fusion by changing the volume of the gasmix by controlling the power of the magnetic fields</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/melting_point">melting_point</a></th><td>The point at which we melt</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/moderator_injection_rate">moderator_injection_rate</a></th><td>User controlled variable to control the flow of the fusion by changing the amount of moderators injected</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/moderator_internal">moderator_internal</a></th><td>Stores the information of the moderators gasmix</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/power_level">power_level</a></th><td>Stores the current fusion mix power level</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/power_output">power_output</a></th><td>*The effective power transmission of the fusion reaction, power_output = efficiency * (internal_power - conduction - radiation)
+* Conduction is the heat value that is transmitted by the molecular interactions and it gets removed from the internal_power lowering the effective output
+* Radiation is the irradiation released by the fusion reaction, it comprehends all wavelenghts in the spectrum, it lowers the effective output of the reaction</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/rad_power">rad_power</a></th><td>Amount of radiation that the machine can output</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/radiation">radiation</a></th><td>The remaining wavelength that actually can do damage to mobs.</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/radio">radio</a></th><td>Our internal radio</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/radio_key">radio_key</a></th><td>The key our internal radio uses</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/safe_alert">safe_alert</a></th><td>Our &quot;Shit is no longer fucked&quot; message. We send it when critical_threshold_proximity is less then critical_threshold_proximity_archived</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/soundloop">soundloop</a></th><td>Our soundloop</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/start_cooling">start_cooling</a></th><td>Checks for the cooling to start</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/start_fuel">start_fuel</a></th><td>Checks for the fuel to be injected</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/start_power">start_power</a></th><td>Processing checks
+Checks if the user has started the machine</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/tritium">tritium</a></th><td>Stores the moles of the gases (the ones with m_ are of the moderator mix)</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/warning_alert">warning_alert</a></th><td>The alert we send when we've reached warning_point</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/warning_point">warning_point</a></th><td>The point at which we should start sending messeges about the critical_threshold_proximity to the engi channels.</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/hypertorus/core.html#var/waste_remove">waste_remove</a></th><td>Check if the user want to remove the waste gases</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/common_channel"><aside class="declaration">var </aside>common_channel
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L293">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 293"/></a></h3>
+        <p>The common channel</p><h3 id="var/conduction"><aside class="declaration">var </aside>conduction
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L218">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 218"/></a></h3>
+        <p>Energy from the reaction lost from the molecule colliding between themselves.</p><h3 id="var/core_temperature"><aside class="declaration">var </aside>core_temperature
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L200">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 200"/></a></h3>
+        <p>Temperature of the center of the fusion reaction</p><h3 id="var/corners"><aside class="declaration">var </aside>corners
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L185">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 185"/></a></h3>
+        <p>Stores the information of the corners of the machine</p><h3 id="var/critical_threshold_proximity"><aside class="declaration">var </aside>critical_threshold_proximity
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L266">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 266"/></a></h3>
+        <p>Integrity of the machine, if reaches 900 the machine will explode</p><h3 id="var/critical_threshold_proximity_archived"><aside class="declaration">var </aside>critical_threshold_proximity_archived
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L268">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 268"/></a></h3>
+        <p>Store the integrity for calculations</p><h3 id="var/current_damper"><aside class="declaration">var </aside>current_damper
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L255">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 255"/></a></h3>
+        <p>User controlled variable to control the flow of the fusion by changing the instability of the reaction</p><h3 id="var/delta_temperature"><aside class="declaration">var </aside>delta_temperature
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L216">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 216"/></a></h3>
+        <p>Difference between the gases temperature and the internal temperature of the reaction</p><h3 id="var/efficiency"><aside class="declaration">var </aside>efficiency
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L222">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 222"/></a></h3>
+        <p>Efficiency of the reaction, it increases with the amount of plasma</p><h3 id="var/emergency_alert"><aside class="declaration">var </aside>emergency_alert
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L278">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 278"/></a></h3>
+        <p>The alert we send when we've reached emergency_point</p><h3 id="var/emergency_point"><aside class="declaration">var </aside>emergency_point
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L276">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 276"/></a></h3>
+        <p>The point at which we start sending messages to the common channel</p><h3 id="var/energy"><aside class="declaration">var </aside>energy
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L198">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 198"/></a></h3>
+        <p>Fusion vars
+E=mc^2 with some addition to allow it gameplaywise</p><h3 id="var/engineering_channel"><aside class="declaration">var </aside>engineering_channel
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L291">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 291"/></a></h3>
+        <p>The engineering channel</p><h3 id="var/filter_type"><aside class="declaration">var </aside>filter_type
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L191">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 191"/></a></h3>
+        <p>Set the filtering type of the waste remove</p><h3 id="var/final_countdown"><aside class="declaration">var </aside>final_countdown
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L306">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 306"/></a></h3>
+        <p>Var used in the meltdown phase</p><h3 id="var/fuel_injection_rate"><aside class="declaration">var </aside>fuel_injection_rate
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L261">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 261"/></a></h3>
+        <p>User controlled variable to control the flow of the fusion by changing the amount of fuel injected</p><h3 id="var/fusion_temperature"><aside class="declaration">var </aside>fusion_temperature
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L301">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 301"/></a></h3>
+        <p>These vars store the temperatures to be used in the GUI</p><h3 id="var/has_reached_emergency"><aside class="declaration">var </aside>has_reached_emergency
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L282">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 282"/></a></h3>
+        <p>Boolean used for logging if we've passed the emergency point</p><h3 id="var/heat_limiter_modifier"><aside class="declaration">var </aside>heat_limiter_modifier
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L224">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 224"/></a></h3>
+        <p>Hotter air is easier to heat up and cool down</p><h3 id="var/heat_output"><aside class="declaration">var </aside>heat_output
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L226">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 226"/></a></h3>
+        <p>The amount of heat that is finally emitted, based on the power output. Min and max are variables that depends of the modifier</p><h3 id="var/heating_conductor"><aside class="declaration">var </aside>heating_conductor
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L251">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 251"/></a></h3>
+        <p>User controlled variable to control the flow of the fusion by changing the contact of the material</p><h3 id="var/icon_state_open"><aside class="parent"><a title="/obj/machinery/atmospherics/components/unary/hypertorus" href="obj/machinery/atmospherics/components/unary/hypertorus.html#var/icon_state_open">&uarr;</a></aside>icon_state_open
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L157">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 157"/></a></h3>
+        <p>Vars for the state of the icon of the object (open, off, active)</p><h3 id="var/instability"><aside class="declaration">var </aside>instability
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L212">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 212"/></a></h3>
+        <p>Instability effects how chaotic the behavior of the reaction is</p><h3 id="var/internal_fusion"><aside class="declaration">var </aside>internal_fusion
+            <aside>&ndash; /<a href="datum.html">datum</a>/<a href="datum/gas_mixture.html">gas_mixture</a></aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L187">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 187"/></a></h3>
+        <p>Stores the information of the fusion gasmix</p><h3 id="var/internal_power"><aside class="declaration">var </aside>internal_power
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L205">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 205"/></a></h3>
+        <p>*Power emitted from the center of the fusion reaction: Internal power = densityH2 * densityTrit(Pi * (2 * rH2 * rTrit)**2) * Energy
+* density is calculated with moles/volume, rH2 and rTrit are values calculated with moles/(radius of the gas)
+both of the density can be varied by the power_modifier</p><h3 id="var/iron_content"><aside class="declaration">var </aside>iron_content
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L259">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 259"/></a></h3>
+        <p>Stores the iron content produced by the fusion</p><h3 id="var/last_accent_sound"><aside class="declaration">var </aside>last_accent_sound
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L298">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 298"/></a></h3>
+        <p>cooldown tracker for accent sounds</p><h3 id="var/lastwarning"><aside class="declaration">var </aside>lastwarning
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L284">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 284"/></a></h3>
+        <p>Time in 1/10th of seconds since the last sent warning</p><h3 id="var/linked_input"><aside class="declaration">var </aside>linked_input
+            <aside>&ndash; /<a href="obj.html">obj</a>/<a href="obj/machinery.html">machinery</a>/<a href="obj/machinery/atmospherics.html">atmospherics</a>/<a href="obj/machinery/atmospherics/components.html">components</a>/<a href="obj/machinery/atmospherics/components/unary/hypertorus.html">unary/hypertorus</a>/fuel_input</aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L181">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 181"/></a></h3>
+        <p>Stores the information of the fuel input</p><h3 id="var/linked_interface"><aside class="declaration">var </aside>linked_interface
+            <aside>&ndash; /<a href="obj.html">obj</a>/<a href="obj/machinery.html">machinery</a>/hypertorus/interface</aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L177">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 177"/></a></h3>
+        <p>Hypertorus internal objects and gasmixes
+Stores the informations of the interface machine</p><h3 id="var/linked_moderator"><aside class="declaration">var </aside>linked_moderator
+            <aside>&ndash; /<a href="obj.html">obj</a>/<a href="obj/machinery.html">machinery</a>/<a href="obj/machinery/atmospherics.html">atmospherics</a>/<a href="obj/machinery/atmospherics/components.html">components</a>/<a href="obj/machinery/atmospherics/components/unary/hypertorus.html">unary/hypertorus</a>/moderator_input</aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L179">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 179"/></a></h3>
+        <p>Stores the information of the moderator input</p><h3 id="var/linked_output"><aside class="declaration">var </aside>linked_output
+            <aside>&ndash; /<a href="obj.html">obj</a>/<a href="obj/machinery.html">machinery</a>/<a href="obj/machinery/atmospherics.html">atmospherics</a>/<a href="obj/machinery/atmospherics/components.html">components</a>/<a href="obj/machinery/atmospherics/components/unary/hypertorus.html">unary/hypertorus</a>/waste_output</aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L183">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 183"/></a></h3>
+        <p>Stores the information of the waste output</p><h3 id="var/magnetic_constrictor"><aside class="declaration">var </aside>magnetic_constrictor
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L253">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 253"/></a></h3>
+        <p>User controlled variable to control the flow of the fusion by changing the volume of the gasmix by controlling the power of the magnetic fields</p><h3 id="var/melting_point"><aside class="declaration">var </aside>melting_point
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L280">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 280"/></a></h3>
+        <p>The point at which we melt</p><h3 id="var/moderator_injection_rate"><aside class="declaration">var </aside>moderator_injection_rate
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L263">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 263"/></a></h3>
+        <p>User controlled variable to control the flow of the fusion by changing the amount of moderators injected</p><h3 id="var/moderator_internal"><aside class="declaration">var </aside>moderator_internal
+            <aside>&ndash; /<a href="datum.html">datum</a>/<a href="datum/gas_mixture.html">gas_mixture</a></aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L189">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 189"/></a></h3>
+        <p>Stores the information of the moderators gasmix</p><h3 id="var/power_level"><aside class="declaration">var </aside>power_level
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L257">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 257"/></a></h3>
+        <p>Stores the current fusion mix power level</p><h3 id="var/power_output"><aside class="declaration">var </aside>power_output
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L210">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 210"/></a></h3>
+        <p>*The effective power transmission of the fusion reaction, power_output = efficiency * (internal_power - conduction - radiation)
+* Conduction is the heat value that is transmitted by the molecular interactions and it gets removed from the internal_power lowering the effective output
+* Radiation is the irradiation released by the fusion reaction, it comprehends all wavelenghts in the spectrum, it lowers the effective output of the reaction</p><h3 id="var/rad_power"><aside class="declaration">var </aside>rad_power
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L214">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 214"/></a></h3>
+        <p>Amount of radiation that the machine can output</p><h3 id="var/radiation"><aside class="declaration">var </aside>radiation
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L220">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 220"/></a></h3>
+        <p>The remaining wavelength that actually can do damage to mobs.</p><h3 id="var/radio"><aside class="declaration">var </aside>radio
+            <aside>&ndash; /<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/<a href="obj/item/radio.html">radio</a></aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L287">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 287"/></a></h3>
+        <p>Our internal radio</p><h3 id="var/radio_key"><aside class="declaration">var </aside>radio_key
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L289">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 289"/></a></h3>
+        <p>The key our internal radio uses</p><h3 id="var/safe_alert"><aside class="declaration">var </aside>safe_alert
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L270">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 270"/></a></h3>
+        <p>Our &quot;Shit is no longer fucked&quot; message. We send it when critical_threshold_proximity is less then critical_threshold_proximity_archived</p><h3 id="var/soundloop"><aside class="declaration">var </aside>soundloop
+            <aside>&ndash; /<a href="datum.html">datum</a>/<a href="datum/looping_sound.html">looping_sound</a>/hypertorus</aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L296">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 296"/></a></h3>
+        <p>Our soundloop</p><h3 id="var/start_cooling"><aside class="declaration">var </aside>start_cooling
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L168">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 168"/></a></h3>
+        <p>Checks for the cooling to start</p><h3 id="var/start_fuel"><aside class="declaration">var </aside>start_fuel
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L170">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 170"/></a></h3>
+        <p>Checks for the fuel to be injected</p><h3 id="var/start_power"><aside class="declaration">var </aside>start_power
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L166">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 166"/></a></h3>
+        <p>Processing checks
+Checks if the user has started the machine</p><h3 id="var/tritium"><aside class="declaration">var </aside>tritium
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L229">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 229"/></a></h3>
+        <p>Stores the moles of the gases (the ones with m_ are of the moderator mix)</p><h3 id="var/warning_alert"><aside class="declaration">var </aside>warning_alert
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L274">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 274"/></a></h3>
+        <p>The alert we send when we've reached warning_point</p><h3 id="var/warning_point"><aside class="declaration">var </aside>warning_point
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L272">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 272"/></a></h3>
+        <p>The point at which we should start sending messeges about the critical_threshold_proximity to the engi channels.</p><h3 id="var/waste_remove"><aside class="declaration">var </aside>waste_remove
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/code/modules/atmospherics/machinery/components/fusion/hypertorus.dm#L249">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;fusion&#x2F;hypertorus.dm 249"/></a></h3>
+        <p>Check if the user want to remove the waste gases</p></main>
+<footer>
+    tgstation.dme
+    <a href="https://github.com/Skyrat-SS13/Skyrat-tg/tree/91955d09fdba78d921733bec54c6f2b9278033a8">91955d0</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.3.0</a></footer>
+</body>
+</html>

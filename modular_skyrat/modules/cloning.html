@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>modular_skyrat&#x2F;modules&#x2F;cloning&#x2F;readme.md - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+</header>
+<main>
+<h1>modular_skyrat/modules/cloning/readme.md 
+            <a href="https://github.com/Skyrat-SS13/Skyrat-tg/blob/91955d09fdba78d921733bec54c6f2b9278033a8/modular_skyrat/modules/cloning/readme.md">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;cloning&#x2F;readme.md"/></a></h1>
+
+<table class="summary" cellspacing="0">
+        <tr><td colspan="2"><p>https://github.com/Skyrat-SS13/Skyrat-tg/pull/151</p>
+<h2 id="title-cloning">Title: Cloning</h2>
+<p>MODULE ID: CLONING</p>
+<h3 id="description">Description:</h3>
+<p>Enables the crew to clone dead bodies via the cloning scanner.</p>
+<h3 id="tg-proc-changes">TG Proc Changes:</h3>
+<ul>
+<li>code/_globalvars/lists/poll_ignore.dm &gt; GLOBAL_LIST_INIT(poll_ignore_desc)</li>
+<li>code/datums/dna.dm &gt; /datum/dna/Destroy()</li>
+<li>code/datums/shuttles.dm &gt; /datum/map_template/shuttle/emergency/zeta</li>
+<li>code/modules/antagonists/revenant/revenant_abilities.dm &gt; /obj/effect/proc_holder/spell/aoe_turf/revenant/malfunction/proc/malfunction()</li>
+<li>code/modules/clothing/head/misc_special.dm &gt; /obj/item/clothing/head/foilhat/equipped()</li>
+</ul>
+<h3 id="defines">Defines:</h3>
+<ul>
+<li>#define ACCESS_CLONING 68</li>
+<li>#define CLONER_FRESH_CLONE &quot;fresh&quot;</li>
+<li>#define CLONER_MATURE_CLONE &quot;mature&quot;</li>
+<li>#define CLONING_SUCCESS (1&lt;&lt;0)</li>
+<li>#define CLONING_DELETE_RECORD (1&lt;&lt;1)</li>
+<li>#define POLL_IGNORE_DEFECTIVECLONE &quot;defective_clone&quot;</li>
+</ul>
+<!-- If you needed to add any defines, mention the files you added those defines in -->
+<h3 id="master-file-additions">Master file additions</h3>
+<ul>
+<li>N/A</li>
+</ul>
+<!-- Any master file changes you've made to existing master files or if you've added a new master file. Please mark either as #NEW or #CHANGE -->
+<h3 id="included-files-that-are-not-contained-in-this-module">Included files that are not contained in this module:</h3>
+<ul>
+<li>N/A</li>
+</ul>
+<!-- Likewise, be it a non-modular file or a modular one that's not contained within the folder belonging to this specific module, it should be mentioned here -->
+<h3 id="credits">Credits:</h3><!-- Here go the credits to you, dear coder, and in case of collaborative work or ports, credits to the original source of the code --></td></tr></table></main>
+<footer>
+    tgstation.dme
+    <a href="https://github.com/Skyrat-SS13/Skyrat-tg/tree/91955d09fdba78d921733bec54c6f2b9278033a8">91955d0</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.3.0</a></footer>
+</body>
+</html>
